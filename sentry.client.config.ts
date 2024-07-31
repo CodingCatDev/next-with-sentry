@@ -26,5 +26,11 @@ Sentry.init({
       maskAllText: true,
       blockAllMedia: true,
     }),
+    Sentry.thirdPartyErrorFilterIntegration({
+      filterKeys: [
+        'sentry-demo'
+      ],
+      behaviour: "apply-tag-if-contains-third-party-frames"
+    })
   ],
 });
